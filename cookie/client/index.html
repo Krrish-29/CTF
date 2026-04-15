@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTF</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-effects">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <div class="dashboard-container">
+        <header>
+            <div class="logo">
+                <span class="icon">🔒</span>
+                <h1>Secure System</h1>
+            </div>
+            <div class="status-badge" id="status-badge">Status: <span class="status-text">GUEST</span></div>
+        </header>
+
+        <main>
+            <div class="card terminal-card">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <div class="terminal-body" id="terminal-output">
+                    <p class="sys-msg">> System initialized...</p>
+                    <p class="sys-msg">> Fetching session data...</p>
+                </div>
+            </div>
+
+            <div class="action-section">
+                <h2>Admin Verification</h2>
+                <p>You must have an Administrator access token to view the restricted flag. Our backend validates your credentials safely.</p>
+                <button id="check-flag-btn" class="btn primary-btn">
+                    <span class="btn-text">Check Authorization</span>
+                    <span class="loader" style="display: none;"></span>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
