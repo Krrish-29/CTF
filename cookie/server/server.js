@@ -23,13 +23,13 @@ app.get('/api/init', (req, res) => {
   res.cookie('is_admin', 'false', cookieOptions); 
   res.cookie('access_level', '1', cookieOptions);
   res.cookie('privileges', 'read_only', cookieOptions);
-  res.cookie('theme', 'light', cookieOptions);// imp
+  res.cookie('secret_cookie', 'cookie', cookieOptions);// imp
 
   res.json({ message: "Challenge initialized. Authentication required." });
 });
 
 app.get('/api/flag', (req, res) => {
-  if (req.cookies.theme === 'admin') {// imp
+  if (req.cookies.secret_cookie === 'Oreo') {// imp
     res.json({
       success: true,
       message: "Access Granted",
