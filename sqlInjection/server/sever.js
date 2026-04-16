@@ -14,7 +14,7 @@ const db = new sqlite3.Database(':memory:');
 db.serialize(() => {
     db.run("CREATE TABLE users (id INTEGER PRIMARY KEY, username TEXT, password TEXT)");
     const stmt = db.prepare("INSERT INTO users (username, password) VALUES (?, ?)");
-    stmt.run("admin", "super_secret_impossible_password_123!@#");
+    stmt.run("snowden", "super_secret_impossible_password_123!@#");
     stmt.finalize();
 });
 const FLAG = "CTF{SQL_INJECTION_MASTER_9921}";// imp
@@ -25,7 +25,7 @@ app.post('/api/login', (req, res) => {
     if (!username || !password) {
         return res.status(400).json({ success: false, message: 'Username and password required' });
     }
-    if(username!=='admin') {
+    if(username!=='snowden') {
         return res.status(400).json({ success: false, message: 'Invalid username or password' });
     }
     const query = `SELECT * FROM users WHERE username = '${username}' AND password = '${password}'`;
