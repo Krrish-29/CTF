@@ -29,7 +29,7 @@ app.get('/api/init', (req, res) => {
 });
 
 app.get('/api/flag', (req, res) => {
-  if (req.cookies.secret_cookie === 'Oreo') {// imp
+  if (String(req.cookies.secret_cookie).toLowerCase() === 'oreo') {// imp
     res.json({
       success: true,
       message: "Access Granted",
